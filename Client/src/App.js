@@ -1,36 +1,17 @@
-import React, { Component } from 'react';
-import './App.css';
-import axios from 'axios';
+import React from 'react';
+import ContextState from './context_state_config';
 
-// https://jsonplaceholder.typicode.com/posts
 
-const axiosInstance = axios.create({
-  baseURL: 'https://jsonplaceholder.typicode.com'
-})
 
-class App extends Component {
-  state = {
-    hello: null
-  }
+const App = () => {
 
-  componentDidMount() {
-    this.asyncFunction();
-  }
-
-  asyncFunction = async () => {
-    await fetch('https://jsonplaceholder.typicode.com/posts')
-      .then(res => res.json())
-      .then(json => console.log(json))
-  }
-
-  render() {
-    return (
+    return(
       <div>
-        {this.state.hello ? <div> {this.state.hello} </div> : null}
+      React
+      <ContextState />
       </div>
     )
-  }
-
 }
+
 
 export default App;
